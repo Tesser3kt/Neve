@@ -5,10 +5,10 @@ let
 in
 {
   options = {
-    nvim-jdtls.enable = lib.mkEnableOption "Enable nvim-jdtls module";
+    jdtls.enable = lib.mkEnableOption "Enable jdtls module";
   };
-  config = lib.mkIf config.nvim-jdtls.enable {
-    plugins.nvim-jdtls = {
+  config = lib.mkIf config.jdtls.enable {
+    plugins.jdtls.settings = {
       enable = true;
       cmd = [
         "/nix/store/ka32hdd6lnbs1ahndn64p5519381r2vl-jdt-language-server-1.44.0/bin/jdtls"
@@ -22,7 +22,7 @@ in
           completion = true;
         };
       };
-      initOptions = {
+      init_options = {
         bundles = [
           "/nix/store/b9ib40q36wxjl4xs5lng263lflz1fsi7-vscode-extension-vscjava-vscode-java-debug-0.49.2023032407/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar"
           "${javaTestPath}"
