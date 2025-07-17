@@ -8,6 +8,7 @@
     ./base16.nix
     ./catppuccin.nix
     ./rose-pine.nix
+    ./nord.nix
   ];
 
   options = {
