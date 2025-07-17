@@ -51,6 +51,7 @@
                 extra_args = { "--no-semi", "--single-quote" },
               }
             '';
+            disableTsServerFormatter = false;
           };
           google_java_format = {
             enable = true;
