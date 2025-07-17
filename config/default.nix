@@ -22,7 +22,7 @@
   ];
 
   bufferlines.enable = lib.mkDefault true;
-  colorschemes.enable = lib.mkDefault true;
+  colorschemes.enable = lib.mkDefault false;
   completion.enable = lib.mkDefault true;
   dap.enable = lib.mkDefault true;
   filetrees.enable = lib.mkDefault true;
