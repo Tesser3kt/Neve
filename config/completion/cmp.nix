@@ -146,7 +146,7 @@
       })
 
       -- Add snippets folder
-      require("luasnip.loader.from_lua").load {
+      require("luasnip.loaders.from_lua").load {
         paths = "../snippets"
       }
       require("luasnip").config.set_config {
