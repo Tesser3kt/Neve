@@ -10,7 +10,7 @@
       copilot-cmp = { enable = true; }; # copilot suggestions
       cmp = {
         enable = true;
-        autoEnableSources = false;
+        autoEnableSources = true;
         settings = {
           experimental = { ghost_text = true; };
           mapping = {
@@ -19,7 +19,7 @@
 
             "<Tab>" = ''
               cmp.mapping(function(fallback)
-                if luasnip.expand_or_jumpable() then
+                if luasnip.expand_or_locally_jumpable() then
                   luasnip.expand_or_jump()
                 else
                   fallback()
@@ -29,7 +29,7 @@
 
             "<S-Tab>" = ''
               cmp.mapping(function(fallback)
-                if luasnip.locally_jumpable(-1) then
+                if luasnip.jumpable(-1) then
                   luasnip.jump(-1)
                 else
                   fallback()
@@ -48,20 +48,17 @@
           };
           sources = [
             { name = "nvim_lsp"; }
-            {
-              name = "buffer";
-              keyword_length = 5;
-            }
+            { name = "buffer"; }
             { name = "copilot"; }
-            {
-              name = "path";
-              keyword_length = 3;
-            }
+            { name = "path"; }
             {
               name = "luasnip";
-              keyword_length = 3;
+              priority = 2000;
             }
           ];
+          snippet = {
+            expand = "function(args) luasnip.lsp_expand(args.body) end";
+          };
 
           # Enable pictogram icons for lsp/autocompletion
           formatting = {
