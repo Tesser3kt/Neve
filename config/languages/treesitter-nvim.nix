@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   options = {
     treesitter-nvim.enable = lib.mkEnableOption "Enable treesitter-nvim module";
   };
@@ -9,16 +8,12 @@
       settings = {
         highlight = {
           enable = true;
+          # Disable highlighting for tex/latex
+          disable = [ "tex" "latex" ];
         };
-        indent = {
-          enable = true;
-        };
-        autopairs = {
-          enable = true;
-        };
-        folding = {
-          enable = true;
-        };
+        indent = { enable = true; };
+        autopairs = { enable = true; };
+        folding = { enable = true; };
         ensure_installed = [
           "bash"
           "c"
@@ -99,22 +94,14 @@
       };
       swap = {
         enable = true;
-        swapNext = {
-          "<leader>a" = "@parameters.inner";
-        };
-        swapPrevious = {
-          "<leader>A" = "@parameter.outer";
-        };
+        swapNext = { "<leader>a" = "@parameters.inner"; };
+        swapPrevious = { "<leader>A" = "@parameter.outer"; };
       };
     };
 
-    plugins.ts-autotag = {
-      enable = true;
-    };
+    plugins.ts-autotag = { enable = true; };
 
-    plugins.treesitter-context = {
-      enable = true;
-    };
+    plugins.treesitter-context = { enable = true; };
 
     plugins.ts-context-commentstring = {
       enable = true;

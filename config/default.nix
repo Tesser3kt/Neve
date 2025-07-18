@@ -1,6 +1,7 @@
 { lib, config, ... }: {
   # Import all your configuration modules here
   imports = [
+    ./locals.nix
     ./bufferlines
     ./colorschemes
     ./completion
