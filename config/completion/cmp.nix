@@ -143,7 +143,7 @@
 
       -- Add snippets folder
       require("luasnip.loaders.from_lua").load {
-        paths = "/etc/nixos/nvim/snippets"
+        paths = "~/.config/nvim/snippets"
       }
       require("luasnip").config.set_config {
         enable_autosnippets = true,
