@@ -37,4 +37,7 @@
   telescope.enable = lib.mkDefault true;
   ui.enable = lib.mkDefault true;
   utils.enable = lib.mkDefault true;
+
+  # GlobaL options
+  globalOpts = { vimtex_view_method = "zathura"; };
 }

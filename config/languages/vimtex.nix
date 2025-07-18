@@ -7,6 +7,4 @@
     key = "<leader>vc";
     action = "<cmd>VimtexCompile<cr>";
   }];
-  # Latex local options
-  globalOpts = { vimtex_view_method = "zathura"; };
 }
