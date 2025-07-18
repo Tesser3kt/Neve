@@ -412,6 +412,13 @@
         key = "<leader>hm";
         action.__raw = "function() require'harpoon':list():select(4) end";
       }
+
+      # Vimtex keys
+      {
+        mode = "n";
+        key = "<leader>vc";
+        action = "<cmd>VimtexCompile<cr>";
+      }
     ];
   };
 }
